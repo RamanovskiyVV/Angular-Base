@@ -1,0 +1,5 @@
+<header common-header></header>
+<card *ngFor="let course of listOfCourses; trackBy:identify" title="{{course.title}}" text="{{course.description}}"
+    creationDate="{{course.creationDate}}" duration="{{course.duration}}" authors="{{course.authors}}"
+    editable={{course.editable}}>
+</card>

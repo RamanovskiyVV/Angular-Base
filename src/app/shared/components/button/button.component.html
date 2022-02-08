@@ -1,0 +1,5 @@
+<ng-container *ngIf="buttonTextIconName.length > 0">
+    <fa-icon *ngIf="buttonTextIconName == 'pen'" icon="pen"></fa-icon>
+    <fa-icon *ngIf="buttonTextIconName == 'trash'" icon="trash-restore-alt"></fa-icon>
+</ng-container>
+<p *ngIf="buttonText.length > 0">{{ buttonText }}</p>

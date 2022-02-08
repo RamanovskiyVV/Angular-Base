@@ -1,0 +1,21 @@
+:host {
+    display: inline;
+    border: 2px solid #DB1DF8;
+    margin-left: 1em;
+    margin-top: 2.2em;
+    background-color: white;
+    vertical-align: middle;
+}
+
+:host:hover {
+    font-weight: bold;
+    font-size: 1em;
+}
+
+:host:active {
+    background-color: gray;
+}
+
+:host:focus {
+    border: 2px solid red;
+}

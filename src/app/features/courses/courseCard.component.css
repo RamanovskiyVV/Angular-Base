@@ -1,0 +1,13 @@
+:host {
+    border: 2px solid #3FF804;
+    margin-top: 1.5em;
+    padding: 1em;
+    display: block;
+}
+
+.information-list {
+    list-style-type: none;
+    display: initial;
+    position: absolute;
+    margin-top: 3em;
+}

@@ -1,0 +1,20 @@
+:host {
+    border: 2px solid red;
+}
+
+.user-menu {
+    display: inline;
+    margin-left: 82%;
+    position: absolute;
+    margin-top: 2%;
+}
+
+.user-name {
+    margin-right: 22px;
+    display: inline;
+}
+
+.headerImage {
+    margin: -0.6em;
+    width: 6%;
+}
