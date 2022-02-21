@@ -1,0 +1,44 @@
+<div class="login-form" onSubmit="{HandleSubmit}">
+    <h1>
+        Login
+    </h1>
+    <div>Email</div>
+    <input
+        type="text"
+        id="email"
+        name="email"
+        required
+        [email]="user.email"
+        [(ngModel)]="user.email"
+        #email="ngModel"
+    />
+    <div [hidden]="email.valid || email.untouched" class="alert">
+        Invalid email
+    </div>
+    <div>Password :</div>
+    <input
+        type="password"
+        id="password"
+        name="password"
+        required
+        minlength="4"
+        [(ngModel)]="user.password"
+        #password="ngModel"
+    />
+    <div [hidden]="password.valid || password.untouched" class="alert">
+        Invalid password
+    </div>
+    <div>
+        <button
+            [disabled]="
+                (!password.valid && !password.untouched) ||
+                (!email.valid && !email.untouched)
+            "
+            common-button
+            buttonText="Login"
+        >
+            Login
+        </button>
+    </div>
+    <div>If you not have an account you can <a href="/registration">Registration</a></div>
+</div>

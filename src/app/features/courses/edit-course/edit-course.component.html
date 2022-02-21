@@ -1,0 +1,78 @@
+<form class="edit-form" [formGroup]="editCourseForm">
+    <div>Title</div>
+    <input name="title" formControlName="title" />
+    <div
+        class="alert alert-danger"
+        *ngIf="
+            editCourseForm.controls['title'].invalid &&
+            editCourseForm.controls['title'].touched
+        "
+    >
+        invalid title provided
+    </div>
+    <button
+        common-button
+        buttonText="create course"
+        [disabled]="
+            (editCourseForm.controls['title'].invalid &&
+                editCourseForm.controls['title'].touched) ||
+            (editCourseForm.controls['description'].invalid &&
+                editCourseForm.controls['description'].touched) ||
+            (editCourseForm.controls['newAuthor'].invalid &&
+                editCourseForm.controls['newAuthor'].touched) ||
+            (editCourseForm.controls['duration'].invalid &&
+                editCourseForm.controls['duration'].touched)
+        "
+    >
+        create course
+    </button>
+    <div>Description</div>
+    <textarea
+        class="description-area"
+        name="description"
+        formControlName="description"
+    ></textarea>
+    <div
+        class="alert alert-danger"
+        *ngIf="
+            editCourseForm.controls['description'].invalid &&
+            editCourseForm.controls['description'].touched
+        "
+    >
+        invalid description provided
+    </div>
+    <div class="" formGroupName="newAuthor">
+        <div class="form-headers">
+            <h3 class="add-authors-header">Add authors</h3>
+            <h3 class="authors-header">Authors</h3>
+            <ul class="authors-list"></ul>
+            <h3 class="course-authors-header">Course authors</h3>
+            <ul class="added-authors-list"></ul>
+        </div>
+        <div>Author name</div>
+        <input name="authorName" formControlName="authorName" />
+        <div
+            class="alert alert-danger"
+            *ngIf="
+                editCourseForm.controls['newAuthor'].invalid &&
+                editCourseForm.controls['newAuthor'].touched
+            "
+        >
+            invalid author name provided
+        </div>
+    </div>
+    <button common-button buttonText="create author">create author</button>
+    <h3>Duration</h3>
+    <div>Duration</div>
+    <input name="duration" formControlName="duration" />
+    <div
+        class="alert alert-danger"
+        *ngIf="
+            editCourseForm.controls['duration'].invalid &&
+            editCourseForm.controls['duration'].touched
+        "
+    >
+        invalid duration provided
+    </div>
+    <div>Duration: <b>0:0</b></div>
+</form>

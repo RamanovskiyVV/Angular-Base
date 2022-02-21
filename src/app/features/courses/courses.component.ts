@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { mockedCourseList } from 'src/assets/courseList';
 
 @Component({
     selector: 'app-courses',
+    changeDetection: ChangeDetectionStrategy.OnPush,
     templateUrl: `./courses.html`,
 })
 export class CoursesComponent {

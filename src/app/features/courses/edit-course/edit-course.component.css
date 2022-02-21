@@ -1,0 +1,53 @@
+.edit-form{
+    padding: 2em;
+    border: blue 1px solid;
+}
+.description-area {
+    border: 2px solid #F2F81D;
+    margin-right: 24px;
+    height: 300px;
+    width: 99%;
+  }
+
+  .additional-information {
+    border: 2px solid;
+    width: 99%;
+    margin-top: 33px;
+    padding-left: 12px;
+    height: 427px;
+  }
+  .add-authors-header {
+    display: inline;
+    margin-left: 100px;
+  }
+  .authors-header {
+    display: inline;
+    margin-left: 874px;
+  }
+  .authors-list {
+    position: absolute;
+    list-style-type: none;
+    margin-left: 1026px;
+  }
+  .course-authors-header {
+    display: inline;
+    position: absolute;
+    margin-left: -95px;
+    margin-top: 261px;
+  }
+  .added-authors-list {
+    position: absolute;
+    list-style-type: none;
+    margin-left: 1026px;
+    margin-top: 276px;
+  }
+  .ng-touched.ng-invalid {
+    border: 3px solid red;
+  }
+input{
+    border: 3px solid yellow;
+}
+
+.alert{
+    color: red;
+}
