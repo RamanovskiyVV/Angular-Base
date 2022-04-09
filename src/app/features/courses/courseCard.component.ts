@@ -11,9 +11,9 @@ import { UserStoreService } from 'src/app/user/user-store.service';
 export class CourseCardComponent {
     isEditable: Boolean = true;
     constructor(private userStoreService: UserStoreService, private router: Router) {
-        //  this.userStoreService.isAdmin$.subscribe(
-        //     (isAdmin) => (this.isEditable = isAdmin),
-        // );
+        this.userStoreService.isAdmin$.subscribe(
+            (isAdmin) => (this.isEditable = isAdmin),
+        );
     }
     editableTemp: string = '';
     @Input() id: string = '';
