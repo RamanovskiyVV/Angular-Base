@@ -1,4 +1,8 @@
-<form class="edit-form" [formGroup]="editCourseForm">
+<form
+    class="edit-form"
+    [formGroup]="editCourseForm"
+    (ngSubmit)="saveSubmit(editCourseForm)"
+>
     <div>Title</div>
     <input name="title" formControlName="title" />
     <div
@@ -11,8 +15,9 @@
         invalid title provided
     </div>
     <button
+        type="type"
         common-button
-        buttonText="create course"
+        buttonText="Save"
         [disabled]="
             (editCourseForm.controls['title'].invalid &&
                 editCourseForm.controls['title'].touched) ||
@@ -24,7 +29,7 @@
                 editCourseForm.controls['duration'].touched)
         "
     >
-        create course
+        Save
     </button>
     <div>Description</div>
     <textarea
@@ -41,13 +46,38 @@
     >
         invalid description provided
     </div>
-    <div class="" formGroupName="newAuthor">
+    <form class="" [formGroup]="newAuthorForm" (ngSubmit)="createAuthor(newAuthorForm)">
         <div class="form-headers">
             <h3 class="add-authors-header">Add authors</h3>
-            <h3 class="authors-header">Authors</h3>
-            <ul class="authors-list"></ul>
-            <h3 class="course-authors-header">Course authors</h3>
-            <ul class="added-authors-list"></ul>
+            <h3 class="authors-header">Course authors</h3>
+            <label class="added-authors-list"></label>
+            <ul class="added-authors-list">
+                <li *ngFor="let author of authors">
+                    {{ author.name }}
+                    <button
+                        type="type"
+                        common-button
+                        buttonText="remove"
+                        (click)="removeAuthor(author.id)"
+                    >
+                        remove
+                    </button>
+                </li>
+            </ul>
+            <h3 class="course-authors-header">Authors</h3>
+            <ul class="authors-list">
+                <li *ngFor="let author of allAuthors">
+                    {{ author.name }}
+                    <button
+                        type="type"
+                        common-button
+                        buttonText="Add"
+                        (click)="addAuthor(author.id)"
+                    >
+                        Add
+                    </button>
+                </li>
+            </ul>
         </div>
         <div>Author name</div>
         <input name="authorName" formControlName="authorName" />
@@ -60,19 +90,22 @@
         >
             invalid author name provided
         </div>
-    </div>
-    <button common-button buttonText="create author">create author</button>
-    <h3>Duration</h3>
-    <div>Duration</div>
-    <input name="duration" formControlName="duration" />
-    <div
-        class="alert alert-danger"
-        *ngIf="
-            editCourseForm.controls['duration'].invalid &&
-            editCourseForm.controls['duration'].touched
-        "
-    >
-        invalid duration provided
-    </div>
-    <div>Duration: <b>0:0</b></div>
+
+        <button common-button buttonText="create author" type="type">
+            create author
+        </button>
+        <h3>Duration</h3>
+        <div>Duration</div>
+        <input name="duration" formControlName="duration" />
+        <div
+            class="alert alert-danger"
+            *ngIf="
+                editCourseForm.controls['duration'].invalid &&
+                editCourseForm.controls['duration'].touched
+            "
+        >
+            invalid duration provided
+        </div>
+        <div>Duration: <b>0:0</b></div>
+    </form>
 </form>

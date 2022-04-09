@@ -35,11 +35,18 @@
     margin-left: -95px;
     margin-top: 261px;
   }
+  .authors-list {
+    position: absolute;
+    list-style-type: none;
+    margin-left: 1026px;
+    margin-top: 296px;
+  }
+
   .added-authors-list {
     position: absolute;
     list-style-type: none;
     margin-left: 1026px;
-    margin-top: 276px;
+    margin-top: -18px;
   }
   .ng-touched.ng-invalid {
     border: 3px solid red;

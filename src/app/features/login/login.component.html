@@ -1,4 +1,4 @@
-<div class="login-form" onSubmit="{HandleSubmit}">
+<form class="login-form" (ngSubmit)="loginSubmit()">
     <h1>
         Login
     </h1>
@@ -30,6 +30,7 @@
     </div>
     <div>
         <button
+            type="submit"
             [disabled]="
                 (!password.valid && !password.untouched) ||
                 (!email.valid && !email.untouched)
@@ -41,4 +42,4 @@
         </button>
     </div>
     <div>If you not have an account you can <a href="/registration">Registration</a></div>
-</div>
+</form>

@@ -1,4 +1,8 @@
-<form [formGroup]="registrationForm" class="registration-form">
+<form
+    [formGroup]="registrationForm"
+    class="registration-form"
+    (ngSubmit)="regSubmit(registrationForm)"
+>
     <h2>Registration</h2>
     <div class="form-group">
         <div>Name</div>
@@ -46,13 +50,12 @@
             [disabled]="
                 (registrationForm.controls['password'].invalid &&
                     registrationForm.controls['password'].touched) ||
-                (registrationForm.controls['email'].invalid &&
-                    registrationForm.controls['email'].touched) ||
                 (registrationForm.controls['name'].invalid &&
                     registrationForm.controls['name'].touched)
             "
             common-button
             buttonText="Registration"
+            type="type"
         >
             Registration
         </button>
