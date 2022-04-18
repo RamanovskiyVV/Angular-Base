@@ -1,5 +1,10 @@
-<form [formGroup]="searchForm">
-    <input class="search-input" name="value" formControlName="value" />
+<form [formGroup]="searchForm" (ngSubmit)="searchSubmit()">
+    <input
+        class="search-input"
+        name="value"
+        formControlName="value"
+        [(ngModel)]="searchValue"
+    />
 
     <button common-button buttonText="search">
         search

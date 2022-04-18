@@ -1,41 +1,30 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AuthModule } from './auth/auth.module';
 import { CoursesComponent } from './features/courses/courses.component';
 import { CoursesModule } from './features/courses/courses.module';
-import { EditCourseComponent } from './features/courses/edit-course/edit-course.component';
-import { LoginComponent } from './features/login/login.component';
-import { RegistrationComponent } from './features/registration/registration.component';
+import { AuthorsStoreService } from './services/authors-store.service';
+import { AuthorsService } from './services/authors.service';
+import { CourseStoreService } from './services/courses-store.service';
+import { CourseService } from './services/courses.service';
 import { SharedModule } from './shared/shared.module';
-
-const appRoutes: Routes = [
-    { path: '', component: CoursesComponent },
-    { path: 'login', component: LoginComponent },
-    { path: 'registration', component: RegistrationComponent },
-    { path: 'newCourse', component: EditCourseComponent },
-];
+import { UserModule } from './user/user.module';
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        CoursesComponent,
-        LoginComponent,
-        RegistrationComponent,
-        EditCourseComponent,
-    ],
+    declarations: [AppComponent, CoursesComponent],
     imports: [
         BrowserModule,
         AppRoutingModule,
         CoursesModule,
-        RouterModule.forRoot(appRoutes),
-        FormsModule,
         SharedModule,
-        ReactiveFormsModule,
+        HttpClientModule,
+        AuthModule,
+        UserModule,
     ],
-    providers: [],
+    providers: [CourseService, CourseStoreService, AuthorsService, AuthorsStoreService],
     bootstrap: [AppComponent],
 })
 export class AppModule {}

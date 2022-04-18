@@ -6,6 +6,6 @@
 </ul>
 <button common-button buttonText="Show course">Show course</button>
 <ng-container *ngIf="isEditable">
-    <button common-button buttonTextIconName="pen"></button>
+    <button common-button buttonTextIconName="pen" (click)="edit()"></button>
     <button common-button buttonTextIconName="trash"></button>
 </ng-container>
